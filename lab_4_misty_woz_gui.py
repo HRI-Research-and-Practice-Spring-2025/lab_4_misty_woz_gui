@@ -8,8 +8,8 @@ import threading
 import websocket
 import sys, os, time
 ###This part could be different for everyone###
-#sys.path.append(os.path.join(os.path.join(os.path.dirname(__file__), '..'), 'Python-SDK'))
-sys.path.append(os.path.join(os.path.dirname(__file__), 'Python-SDK'))
+sys.path.append(os.path.join(os.path.join(os.path.dirname(__file__), '..'), 'Python-SDK'))
+# sys.path.append(os.path.join(os.path.dirname(__file__), 'Python-SDK'))
 ###This part could be different for everyone###
 from mistyPy.Robot import Robot
 from mistyPy.Events import Events
@@ -123,15 +123,18 @@ class MistyGUI:
 
     def speak(self, phrase):
         print(f"Speak: {phrase}")
-        #refer to robot commands in RobotCommands.py
+        # refer to robot commands in RobotCommands.py - https://github.com/MistyCommunity/Python-SDK/blob/main/mistyPy/RobotCommands.py
+        # or in the Misty API documentation - https://lessons.mistyrobotics.com/python-elements/misty-python-api
         misty.speak(phrase)
 
     def action(self, phrase):
         print(f"Action: {phrase}")
-        #refer to robot commands in RobotCommands.py
+        # refer to robot commands in RobotCommands.py - https://github.com/MistyCommunity/Python-SDK/blob/main/mistyPy/RobotCommands.py
+        # or in the Misty API documentation - https://lessons.mistyrobotics.com/python-elements/misty-python-api
+
+        # TODO: edit the following action and add 3 more to handle your customized nonverbal behaviors and robot reactions (e.g., surprise)
         if phrase == "move_head_1":
             misty.move_head(-15, 0, 0, 80)
-        #TODO: Add more if statements to handle your customized buttons
 
             
     def speech_button(self, phrase):
